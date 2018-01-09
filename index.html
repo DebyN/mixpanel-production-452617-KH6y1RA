@@ -294,7 +294,7 @@ function main() {
       });
     }
     MP.api.query('/api/2.0/engage/properties').done(function(json) {
-      MP.api.query('api/2.0/events/properties/top/', {limit: 255}).done(function(event_json) {
+      MP.api.query('api/2.0/events/properties/top/', {limit: 1500}).done(function(event_json) {
         var event_props = _.map(event_json, function(item, key) {return {label: key + ' (event)', value: key};});
         var people_props = _.map(json.results, function(item, key) {return {label: key + ' (people)', value: '(people)' + key};});
         var props = event_props.concat(people_props);
